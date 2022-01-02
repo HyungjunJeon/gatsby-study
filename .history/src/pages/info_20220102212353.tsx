@@ -24,24 +24,15 @@ const globalStyle = css`
     font-size: 20px;
   }
 `
-
 const TextStyle = css`
   font-size: 10px;
   font-weight: 700;
   color: gray;
 `
-
-const Text1 = styled.div<{ disable: boolean }>`
+const Text1 = styled.div`
   font-size: 20px;
   font-weight: 700;
-  text-decoration: ${({ disable }) => (disable ? 'line-through' : 'none')};
 `
-
-const Text2 = styled('div')<{ disable: boolean }>(({ disable }) => ({
-  fontSize: '15px',
-  color: 'blue',
-  textDecoration: disable ? 'line-through' : 'none',
-}))
 
 const Infopage: FunctionComponent<InfoPageProps> = function ({
   data: {
@@ -54,8 +45,7 @@ const Infopage: FunctionComponent<InfoPageProps> = function ({
     <div>
       <Global styles={globalStyle} />
       <div css={TextStyle}>{title}</div>
-      <Text1 disable={true}>{description}</Text1>
-      <Text2 disable={true}>{author}</Text2>
+      {description} {author}
     </div>
   )
 }
