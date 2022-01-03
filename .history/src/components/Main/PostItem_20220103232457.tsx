@@ -85,9 +85,7 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   date,
   categories,
   summary,
-  thumbnail: {
-    childImageSharp: { gatsbyImageData },
-  },
+  thumbnail: { childImageSharp: gatsbyImageData },
   link,
 }) {
   return (

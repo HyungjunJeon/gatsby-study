@@ -25,7 +25,7 @@ const PostListWrapper = styled.div`
 const PostList: FunctionComponent<PostListProps> = function ({ posts }) {
   return (
     <PostListWrapper>
-      {posts.map(({ node: { id, frontmatter } }: PostListItemType) => (
+      {posts.map(({ node: { id, frontmatter } }: PostType) => (
         <PostItem {...frontmatter} link="https://www.google.co.kr/" key={id} />
       ))}
     </PostListWrapper>

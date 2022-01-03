@@ -1,6 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
+import {
+  GatsbyImage,
+  IGatsbyImageData,
+} from 'gatsby-plugin-image/dist/src/components/gatsby-image.browser'
 
 type ProfileImageProps = {
   profileImage: IGatsbyImageData

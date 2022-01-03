@@ -19,10 +19,11 @@ const PostItemWrapper = styled(Link)`
   }
 `
 
-const ThumbnailImage = styled(GatsbyImage)`
+const ThumbnailImage = styled.img`
   width: 100%;
   height: 200px;
   border-radius: 10px 10px 0 0;
+  object-fit: cover;
 `
 const PostItemContent = styled.div`
   flex: 1;
@@ -85,14 +86,12 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   date,
   categories,
   summary,
-  thumbnail: {
-    childImageSharp: { gatsbyImageData },
-  },
+  thumbnail,
   link,
 }) {
   return (
     <PostItemWrapper to={link}>
-      <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
+      <ThumbnailImage src={thumbnail} alt="Post Item Image" />
       <PostItemContent>
         <Title>{title}</Title>
         <Date>{date}</Date>
