@@ -36,7 +36,7 @@ const PostList: FunctionComponent<PostListProps> = function ({
   )
   return (
     <PostListWrapper ref={containerRef}>
-      {postList.map(({ node: { id, frontmatter } }: PostListItemType) => (
+      {posts.map(({ node: { id, frontmatter } }: PostListItemType) => (
         <PostItem {...frontmatter} link="https://www.google.co.kr/" key={id} />
       ))}
     </PostListWrapper>
