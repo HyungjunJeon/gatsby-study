@@ -13,7 +13,7 @@ export default PostTemplate
 
 export const queryMarkdownDataBySlug = graphql`
   query queryMarkdownDataBySlug($slug: String) {
-    allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
+    allMarkdownRemark(fileter: { fields: { slug: { eq: $slug } } }) {
       edges {
         node {
           html
