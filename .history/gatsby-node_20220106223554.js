@@ -39,7 +39,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         allMarkdownRemark(
           sort: {
             order: DESC
-            fields: [frontmatter___date, frontmatter___title]
+            fields: [frontmatter___data, frontmatter___title]
           }
         ) {
           edges {
@@ -59,28 +59,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running query`)
     return
   }
-
-  // Import Post Template Component
-  const PostTemplateComponent = path.resolve(
-    __dirname,
-    'src/templates/post_template.tsx',
-  )
-
-  // Page Generating Function
-  const generatePostPage = ({
-    node: {
-      fields: { slug },
-    },
-  }) => {
-    const pageOptions = {
-      path: slug,
-      component: PostTemplateComponent,
-      context: { slug },
-    }
-
-    createPage(pageOptions)
-  }
-
-  // Generate Post Page And Passing Slug Props for Query
-  queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage)
+  // createPage({
+  //   path: '/using-dsg',
+  //   component: require.resolve('./src/templates/using-dsg.js'),
+  //   context: {},
+  //   defer: true,
+  // })
 }

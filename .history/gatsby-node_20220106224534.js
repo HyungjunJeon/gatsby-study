@@ -39,7 +39,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         allMarkdownRemark(
           sort: {
             order: DESC
-            fields: [frontmatter___date, frontmatter___title]
+            fields: [frontmatter___data, frontmatter___title]
           }
         ) {
           edges {
