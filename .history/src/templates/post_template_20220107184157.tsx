@@ -68,3 +68,10 @@ export const queryMarkdownDataBySlug = graphql`
     }
   }
 `
+
+export type PostPageItemType = {
+  node: {
+    html: string
+    frontmatter: PostFrontmatterType
+  }
+}
