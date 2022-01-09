@@ -33,14 +33,13 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         categories,
         thumbnail: {
           childImageSharp: { gatsbyImageData },
-          publicURL,
         },
       },
     },
   } = edges[0]
 
   return (
-    <Template title={title} description={summary} url={href} image={publicURL}>
+    <Template>
       <PostHead
         title={title}
         date={date}
